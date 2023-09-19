@@ -1,0 +1,15 @@
+public class MyClass {
+    public static void main(String args[]) {
+      int n;
+      Scanner sc=new Scanner(System.in);
+      n=sc.nextInt();
+      int arr[]=new int[n];
+      int s=0;
+      for(int i=0;i<n-1;i++){
+          arr[i]=sc.nextInt();
+          s=s+arr[i];
+      }
+      int m=(n*(n+1))/2-s;
+          System.out.print("Missing element : "+m);
+    }
+}
