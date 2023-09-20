@@ -1,0 +1,28 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     int n;
+      LinkedHashMap<Integer,Integer>l=new LinkedHashMap<>();
+     Scanner sc=new Scanner(System.in);
+     n=sc.nextInt();
+     int m=n-1;
+      int[] a=new int[n];
+     for(int i=0;i<n;i++)
+     a[i]=sc.nextInt();
+     int t=0;
+    for(int i=0;i<n;i++){
+        if(l.containsKey(a[i]))
+        l.put(a[i],l.get(a[i])+1);
+        else
+        l.put(a[i],1);
+    }
+     for(Integer x:l.keySet()){
+         if(l.get(x)==1)
+         {
+             t=x;
+             break;
+         }
+     }
+     System.out.print("First non-repeating element : "+t);
+    }
+}
