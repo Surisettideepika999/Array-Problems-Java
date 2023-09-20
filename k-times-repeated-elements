@@ -1,0 +1,26 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     int n,k=0;
+     HashMap<Integer,Integer>l=new HashMap<>();
+     Scanner sc=new Scanner(System.in);
+     n=sc.nextInt();
+     k=sc.nextInt();
+     int m=n-1;
+      int[] a=new int[n];
+     for(int i=0;i<n;i++)
+     a[i]=sc.nextInt();
+    for(int i=0;i<n;i++){
+        if(l.containsKey(a[i]))
+        l.put(a[i],l.get(a[i])+1);
+        else
+        l.put(a[i],1);
+    }
+    for(int i=0;i<n;i++){
+        if(l.containsKey(a[i]) && l.get(a[i])==k){
+            System.out.println("k times repeated element "+a[i]);
+            l.remove(a[i]);
+        }
+    }
+    }
+}
